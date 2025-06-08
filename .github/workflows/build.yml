@@ -1,0 +1,40 @@
+name: Build CloseRuntimeBroker GUI
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        arch: [x64, x86]
+
+    env:
+      PYTHON_VERSION: "3.10"
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          architecture: ${{ matrix.arch }}
+
+      - name: Install dependencies
+        run: |
+          pip install pyinstaller pyqt5
+
+      - name: Build EXE
+        run: |
+          pyinstaller CloseRuntimeBroker.spec --noconfirm --clean
+
+      - name: Upload EXE
+        uses: actions/upload-artifact@v3
+        with:
+          name: CloseRuntimeBroker_${{ matrix.arch }}
+          path: dist/CloseRuntimeBroker.exe
