@@ -34,7 +34,8 @@ jobs:
           pyinstaller CloseRuntimeBroker.spec --noconfirm --clean
 
       - name: Upload EXE
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: CloseRuntimeBroker_${{ matrix.arch }}
           path: dist/CloseRuntimeBroker.exe
+
