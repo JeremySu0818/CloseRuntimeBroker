@@ -57,7 +57,7 @@ Maintained by [@jeremysu0818](https://github.com/jeremysu0818).
 Feel free to open an issue for bug reports or suggestions.
 
 
-Chiness Version
+中文版
 # CloseRuntimeBroker
 **CloseRuntimeBroker** 是一款輕量級的 Windows 工具，用於安全終止 `RuntimeBroker.exe`，當它導致 UI 延遲、占用檔案或高 CPU 使用時。  
 本工具設計為**手動操作**，不包含背景常駐行為，也不具備任何自動化功能，適合進階使用者在特定情況下快速排除問題。
