@@ -37,5 +37,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: CloseRuntimeBroker_${{ matrix.arch }}
-          path: dist/CloseRuntimeBroker.exe
+          path: ${{ github.workspace }}/CloseRuntimeBroker/dist/CloseRuntimeBroker.exe
+
 
