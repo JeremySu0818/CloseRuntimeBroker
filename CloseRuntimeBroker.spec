@@ -33,7 +33,8 @@ exe = EXE(
     strip=False,
     upx=True,
     console=False,  # 如果是 GUI 程式請設為 False
-    icon='icon.ico'
+    icon='icon.ico',
+    onefile=True
 )
 
 coll = COLLECT(
